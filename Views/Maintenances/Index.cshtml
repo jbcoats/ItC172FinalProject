@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MetroAltWebApplication.Models.Maintenance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaintenanceDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusKey)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaintenanceDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusKey)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaintenanceKey }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaintenanceKey }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaintenanceKey })
+        </td>
+    </tr>
+}
+
+</table>
